@@ -13,6 +13,7 @@ public protocol GameLocaleDataSource {
   associatedtype Responses
 
   func getFavoriteGames() -> Observable<[Responses]>
+  func getFavoriteGame(id: Int) -> Observable<Bool>
   func addGameToFavorite(entity: Request) -> Observable<Bool>
   func removeGameFromFavorite(id: Int) -> Observable<Bool>
 
