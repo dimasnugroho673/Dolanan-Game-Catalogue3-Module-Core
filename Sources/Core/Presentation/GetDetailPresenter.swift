@@ -36,4 +36,16 @@ public class GetDetailPresenter<Request, Response, Interactor: UseCase>: Observa
         self.isLoading = false
       }.disposed(by: disposeBag)
   }
+
+  public func addGameToFavorite(request: Request?) {
+    print(request)
+//    _useCase.execute(request: request)
+//      .observe(on: MainScheduler.instance)
+//      .subscribe { result in
+//      } onError: { error in
+//        print(String(describing: error.localizedDescription))
+//        self.errorMessage = String(describing: error.localizedDescription)
+//      } onCompleted: {
+//      }.disposed(by: disposeBag)
+  }
 }

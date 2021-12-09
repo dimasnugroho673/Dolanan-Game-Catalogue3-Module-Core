@@ -18,6 +18,7 @@ public class GetListPresenter<Request, Response, Interactor: UseCase>: Observabl
   @Published public var errorMessage: String = ""
   @Published public var isLoading: Bool = false
   @Published public var isError: Bool = false
+  @Published public var keywordCounter: String = ""
 
   public init(useCase: Interactor) {
     _useCase = useCase
@@ -25,7 +26,7 @@ public class GetListPresenter<Request, Response, Interactor: UseCase>: Observabl
 
   public func getList(request: Request?) {
     isLoading = true
-    _useCase.execute(request: request)
+    _useCase.execute(request: request ?? "" as! Request)
       .observe(on: MainScheduler.instance)
       .subscribe { result in
         self.list = result
