@@ -10,8 +10,9 @@ import RxSwift
 public protocol GameLocaleDataSource {
   associatedtype Request
   associatedtype Response
+  associatedtype Responses
 
-  func getFavoriteGames() -> Observable<[Response]>
+  func getFavoriteGames() -> Observable<[Responses]>
   func addGameToFavorite(entity: Request) -> Observable<Bool>
   func removeGameFromFavorite(id: Int) -> Observable<Bool>
 
