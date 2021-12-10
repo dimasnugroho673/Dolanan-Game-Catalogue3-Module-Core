@@ -11,6 +11,6 @@ public protocol UserLocaleDataSource {
   associatedtype Request
   associatedtype Response
 
-  func addUser(data: Response) -> Observable<Bool>
+  func addUser(data: Response) -> Observable<Response>
   func getUser() -> Observable<Response>
 }
